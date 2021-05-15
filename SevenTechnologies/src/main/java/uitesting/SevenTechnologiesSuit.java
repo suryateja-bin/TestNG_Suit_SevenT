@@ -18,7 +18,7 @@ import org.testng.annotations.*;
 public class SevenTechnologiesSuit {
 	WebDriver driver;
 
-	@BeforeMethod(enabled=true)
+	@BeforeMethod
 	public void Launch() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/Surya/eclipse-workspace/SevenTechnologies/ChromeDriver/chromedriver.exe");
 		driver= new ChromeDriver();
