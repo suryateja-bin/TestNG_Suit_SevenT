@@ -18,7 +18,7 @@ import org.testng.annotations.*;
 public class SevenTechnologiesSuit {
 	WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod(enabled=true)
 	public void Launch() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/Surya/eclipse-workspace/SevenTechnologies/ChromeDriver/chromedriver.exe");
 		driver= new ChromeDriver();
@@ -29,7 +29,7 @@ public class SevenTechnologiesSuit {
 
 
 	}
-	@Test(enabled=false)
+	@Test(priority = 1)
 	public void imageStatusIdentifier() throws Exception{
 
 		driver.navigate().to("http://the-internet.herokuapp.com/broken_images");
@@ -60,7 +60,7 @@ public class SevenTechnologiesSuit {
 			}
 		}
 	}
-	@Test(enabled=false)
+	@Test(priority = 2)
 	public void forgotPassword()
 	{
 
@@ -77,7 +77,7 @@ public class SevenTechnologiesSuit {
 		Assert.assertEquals(actual_msg, expect);
 
 	}
-	@Test(enabled=false)
+	@Test(priority = 3)
 	public void AssertDummyPassword()
 	{
 
@@ -95,7 +95,7 @@ public class SevenTechnologiesSuit {
 		Assert.assertEquals(actual_msg, expect);
 
 	}
-	@Test(enabled=false)
+	@Test(priority = 4)
 	public void AssertAlphabetEntry() {
 		driver.navigate().to("http://the-internet.herokuapp.com/inputs");
 		String expect="Test";
@@ -105,13 +105,13 @@ public class SevenTechnologiesSuit {
 		
 		
 	}
-	@Test(enabled=false)
+	@Test(priority = 5)
 	public void SortUITable() {
 		driver.navigate().to("http://the-internet.herokuapp.com/tables");
 		driver.findElement(By.xpath("//*[@id='table1']/thead/tr/th[4]/span")).click();
 		driver.findElement(By.xpath("//*[@id='table2']/thead/tr/th[4]/span")).click();
 	}
-	@Test(enabled=true)
+	@Test(priority = 6)
 	public void Notification() {
 		driver.navigate().to("http://the-internet.herokuapp.com/notification_message_rendered");
 		driver.findElement(By.xpath("//a[text()='Click here']")).click();
@@ -128,7 +128,7 @@ public class SevenTechnologiesSuit {
 		Assert.assertTrue(initial.contains("Action successful"));
 	}
 
-	@AfterMethod(enabled=false)
+	@AfterMethod(enabled=true)
 	public void close() {
 		driver.quit();
 	}
