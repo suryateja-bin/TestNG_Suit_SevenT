@@ -24,7 +24,7 @@ public class SevenTechnologiesSuit {
 		driver= new ChromeDriver();//object for chrome driver
 		driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);//page time out
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//implicit wait
-		driver.manage().deleteAllCookies();//to delete the cookies
+		driver.manage().deleteAllCookies();//to delete the cookies 
 		driver.manage().window().maximize();//to maximize the window
 
 
